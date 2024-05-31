@@ -1,9 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Prisma CRUD
+This project is an example of a basic CRUD application using [Next.js](https://nextjs.org/), [Prisma](https://www.prisma.io/), [SQLite](https://www.sqlite.org/), and [Tailwind CSS](https://tailwindcss.com/).
+
+## Requirements
+- Node.js (version 20.12.0)
+- npm (Node.js package manager)
 
 ## Getting Started
+1. Clone the repository:
+```sh
+git clone <REPOSITORY_URL>
+cd nextjs-prisma-crud
+```
 
-First, run the development server:
+2. Install the project dependencies:
 
+```bash
+npm install
+```
+
+## Usage
+Start the Development Server
 ```bash
 npm run dev
 # or
@@ -16,18 +32,16 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Configuration
+1. Create a .env file in the root of the project with the following content:
+```bash
+DATABASE_URL="file:./dev.db"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Run Prisma migrations to set up the SQLite database:
+```bash
+npx prisma migrate dev --name init
+```
 
 ## Deploy on Vercel
 
